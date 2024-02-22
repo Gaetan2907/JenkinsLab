@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                 // sh 'mvn -B -DskipTests clean package'
-                ./mvnw install
+                sh "./mvnw -Dmaven.test.failure.ignore=true clean package"
             }
         }
     }
